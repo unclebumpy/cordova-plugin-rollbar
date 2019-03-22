@@ -58,7 +58,9 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/res/values/rollbar.xml" target-dir="res/values/" />
+	    <!-- this section does not work to write the token and environment, manually edit strings.xml -->
+        <resource-file src="src/android/res/values/rollbar.xml" target="res/values/rollbar.xml" />
+        <!--<source-file src="src/android/res/values/rollbar.xml" target-dir="res/values/" />-->
         <config-file target="res/values/rollbar.xml" parent="/*">
             <string name="rollbar_access_token">$ROLLBAR_ACCESS_TOKEN</string>
             <string name="rollbar_environment">$ROLLBAR_ENVIRONMENT</string>
@@ -74,7 +76,8 @@
         </config-file>
 
         <!-- copy Rollbar Lib -->
-        <source-file src="src/android/RollbarSDK/rollbar-android-0.1.2.jar" target-dir="libs/" framework="true"/>
+        <source-file src="src/android/RollbarSDK/rollbar-android-0.1.2.jar" target-dir="app/libs/" framework="true" />
+        <!--<source-file src="src/android/RollbarSDK/rollbar-android-0.1.2.jar" target-dir="libs/" framework="true" />-->
 
         <!-- cordova plugin src files -->
         <source-file src="src/android/cordova/plugin/CDVRollbar.java" target-dir="src/cordova/plugin/rollbar" />
@@ -82,4 +85,3 @@
     </platform>
 
 </plugin>
-
